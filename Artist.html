@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css"
+			href="STYLOFOAM.css">
+	</head>
+		<body>
+		<ul id="navbar">
+				<li class ="navitem"><a class ="active sansserif" href="homeport.html">Home </a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Hobby.html">Hobby Website</a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Bonsai.html">Bonsai Art</a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Dream.html">Dream Vacation</a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Scratch.html">Scratch Game</a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Python.html">Python Select-a-path</a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Artist.html">Image Artist</a></li>
+				<li class ="navitem"><a class ="active sansserif" href="Finals.html">Final Project</a></li>
+			</ul>
+		<h1 class="cursive">Art image project: I is WIERD filter</h1>
+		<p>
+		This program for Python yields an image that has Television testing colors, and says I is WIERD, because the resulting image is always a bit,WIERD.<br>
+		
+		import matplotlib.pyplot as plt<br>
+		import os.path<br>
+		import numpy as np # “as” lets us use standard abbreviations<br>
+		from PIL import Image<br>
+		from PIL import ImageFont<br>
+		from PIL import ImageDraw<br>
+		 
+		img = Image.open("imagename.jpeg")<br>
+		draw = ImageDraw.Draw(img)<br>
+		# font = ImageFont.truetype(<font-file>, <font-size>)<br>
+		font = ImageFont.truetype("impactreg (1).ttf", 200)<br>
+		# draw.text((x, y),"Sample Text",(r,g,b))<br>
+		draw.text((200, 500),"i is wierd",(255,255,255),font=font)<br>
+		img.save("imagename.jpeg")<br>
+		 
+		'''Read the image data'''
+		# Get the directory of this python script<br>
+		directory = os.path.dirname(os.path.abspath(__file__))<br>
+		# Build an absolute filename from directory + filename<br>
+		filename = os.path.join(directory, "imagename.jpeg")<br>
+		# Read the image data into an array<br>
+		img = plt.imread(filename)<br>
+		 
+		'''Show the image data'''
+		# Create figure with 1 subplot<br>
+		fig, ax = plt.subplots(1, 1)<br>
+		# Show the image data in a subplot<br>
+		ax.imshow(img, interpolation='none')<br>
+		# Show the figure on the screen<br>
+		 
+		height = len(img)<br>
+		width = len(img)<br>
+		for r in range(720):<br>
+		for c in range(256):<br>
+		if sum(img[r][c])>250: # brightness R+G+B goes up to 3*255=765<br>
+		img[r][c]=[255,255,0] # R + B = magenta<br>
+		 
+		height = len(img)<br>
+		width = len(img)<br>
+		for r in range(720):<br>
+		for c in range(256,512):<br>
+		if sum(img[r][c])>250: # brightness R+G+B goes up to 3*255=765<br>
+		img[r][c]=[50,255,50] # R + B = magenta<br>
+		 
+		height = len(img)<br>
+		width = len(img)<br>
+		for r in range(720):<br>
+		for c in range(512,768):<br>
+		if sum(img[r][c])>250: # brightness R+G+B goes up to 3*255=765<br>
+		img[r][c]=[255,130,255] # R + B = magenta<br>
+		 
+		height = len(img)<br>
+		width = len(img)<br>
+		for r in range(720):<br>
+		for c in range(768,1024):<br>
+		if sum(img[r][c])>250: # brightness R+G+B goes up to 3*255=765<br>
+		img[r][c]=[255,0,0] # R + B = magenta<br>
+		 
+		height = len(img)<br>
+		width = len(img)<br>
+		for r in range(720):<br>
+		for c in range(1024,1280):<br>
+		if sum(img[r][c])>250: # brightness R+G+B goes up to 3*255=765<br>
+		img[r][c]=[100,100,255] # R + B = magenta<br>
+		</p>
+		<h2>OUTCOME</h2>
+		<p>
+		The outcome of the code should look like this:
+		</p><img src="potoo.png" width=1080 height=960 hspace="20">
+		</body>
+</html>
